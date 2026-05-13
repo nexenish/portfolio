@@ -1,0 +1,155 @@
+/* Полноэкранное меню и фиксированная кнопка открытия — только новые классы */
+
+html {
+  scroll-padding-top: 52px;
+}
+
+body {
+  padding-top: 48px;
+}
+
+.mobile-menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 60px;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+.mobile-menu-open {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+  justify-content: flex-end;
+  padding: 8px;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu-open:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.mobile-menu-open img {
+  display: block;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--main-color);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-panel {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px 40px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu-close:focus-visible {
+  outline: 2px solid #2c3e50;
+  outline-offset: 2px;
+}
+
+.mobile-menu-close img {
+  display: block;
+  width: 28px;
+  height: auto;
+}
+
+.mobile-menu-nav {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.mobile-menu-nav a {
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.mobile-menu-nav a:hover,
+.mobile-menu-nav a:focus-visible {
+  color: var(--secondary-color);
+}
+
+.mobile-menu-arrow {
+  font-weight: 400;
+}
+
+.mobile-menu-cta {
+  margin-top: auto;
+  align-self: center;
+  border-radius: 20px;
+  border: 1px solid var(--main-color);
+  padding: 8px;
+  width: 80%;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--main-color);
+}
+
+.mobile-menu-cta:hover,
+.mobile-menu-cta:focus-visible {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
+
+body.mobile-menu-open {
+  overflow: hidden;
+}

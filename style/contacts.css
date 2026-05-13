@@ -1,0 +1,27 @@
+.contacts-block {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-link,
+.contact-link::after {
+  padding: 12px;
+  border: 1px solid var(--main-color);
+  border-radius: 20px;
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--main-color);
+}
+
+.contact-link:hover {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+
+}

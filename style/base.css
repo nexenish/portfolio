@@ -1,0 +1,47 @@
+body {
+  font-family: "Monesta", sans-serif;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.block-title {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 38px;
+  color: var(--main-color);
+}
+
+.about .block-title,
+.study .block-title,
+.contacts .block-title {
+  text-align: end;
+}
+
+.line {
+  margin: 35px auto;
+  max-width: 600px;
+  width: 100%;
+  height: 1px !important;
+  background-color: var(--main-color);
+}
+
+/* Анимация появления блоков при скролле */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
